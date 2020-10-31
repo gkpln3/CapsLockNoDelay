@@ -6,21 +6,27 @@
 //
 
 import Cocoa
+import ServiceManagement
 
-@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    let capsLockManager = CapsLockManager()
     
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
+        if SMLoginItemSetEnabled(Bundle.main.bundleIdentifier! as CFString, true) {
+            print("Successfully added login item.")
+        } else {
+            print("Failed to add login item.")
+        }
+        
+        if (!capsLockManager.requestAccess()) {
+            exit(1)
+        }
 
+        self.capsLockManager.registerEventListener()
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
 

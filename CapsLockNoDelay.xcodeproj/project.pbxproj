@@ -10,7 +10,8 @@
 		E1927176254D7F2D00070EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927175254D7F2D00070EA7 /* AppDelegate.swift */; };
 		E1927178254D7F2D00070EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927177254D7F2D00070EA7 /* ViewController.swift */; };
 		E192717A254D7F2E00070EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1927179254D7F2E00070EA7 /* Assets.xcassets */; };
-		E192717D254D7F2E00070EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E192717B254D7F2E00070EA7 /* Main.storyboard */; };
+		E192718D254D896500070EA7 /* CapsLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E192718C254D896500070EA7 /* CapsLockManager.swift */; };
+		E1927191254D8B2400070EA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927190254D8B2400070EA7 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,9 +19,10 @@
 		E1927175254D7F2D00070EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1927177254D7F2D00070EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1927179254D7F2E00070EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E192717C254D7F2E00070EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E192717E254D7F2E00070EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E192717F254D7F2E00070EA7 /* CapsLockNoDelay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapsLockNoDelay.entitlements; sourceTree = "<group>"; };
+		E192718C254D896500070EA7 /* CapsLockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapsLockManager.swift; path = ../CapsLockManager.swift; sourceTree = "<group>"; };
+		E1927190254D8B2400070EA7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +55,13 @@
 		E1927174254D7F2D00070EA7 /* CapsLockNoDelay */ = {
 			isa = PBXGroup;
 			children = (
+				E192718C254D896500070EA7 /* CapsLockManager.swift */,
 				E1927175254D7F2D00070EA7 /* AppDelegate.swift */,
 				E1927177254D7F2D00070EA7 /* ViewController.swift */,
 				E1927179254D7F2E00070EA7 /* Assets.xcassets */,
-				E192717B254D7F2E00070EA7 /* Main.storyboard */,
 				E192717E254D7F2E00070EA7 /* Info.plist */,
 				E192717F254D7F2E00070EA7 /* CapsLockNoDelay.entitlements */,
+				E1927190254D8B2400070EA7 /* main.swift */,
 			);
 			path = CapsLockNoDelay;
 			sourceTree = "<group>";
@@ -121,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E192717A254D7F2E00070EA7 /* Assets.xcassets in Resources */,
-				E192717D254D7F2E00070EA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,21 +136,12 @@
 			files = (
 				E1927178254D7F2D00070EA7 /* ViewController.swift in Sources */,
 				E1927176254D7F2D00070EA7 /* AppDelegate.swift in Sources */,
+				E1927191254D8B2400070EA7 /* main.swift in Sources */,
+				E192718D254D896500070EA7 /* CapsLockManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E192717B254D7F2E00070EA7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E192717C254D7F2E00070EA7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E1927180254D7F2E00070EA7 /* Debug */ = {
@@ -272,6 +265,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockNoDelay/CapsLockNoDelay.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X822FM39JE;
@@ -293,6 +287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockNoDelay/CapsLockNoDelay.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X822FM39JE;
