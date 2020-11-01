@@ -12,16 +12,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let capsLockManager = CapsLockManager()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if SMLoginItemSetEnabled(Bundle.main.bundleIdentifier! as CFString, true) {
-            print("Successfully added login item.")
-        } else {
-            print("Failed to add login item.")
-        }
-        
+        // Request accessability permissions.
         if (!capsLockManager.requestAccess()) {
             exit(1)
         }
-
+        
+        // Start listening for events.
         self.capsLockManager.registerEventListener()
     }
     

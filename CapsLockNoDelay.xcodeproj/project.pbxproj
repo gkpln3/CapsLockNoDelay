@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E1927176254D7F2D00070EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927175254D7F2D00070EA7 /* AppDelegate.swift */; };
-		E1927178254D7F2D00070EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927177254D7F2D00070EA7 /* ViewController.swift */; };
 		E192717A254D7F2E00070EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1927179254D7F2E00070EA7 /* Assets.xcassets */; };
 		E1927191254D8B2400070EA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927190254D8B2400070EA7 /* main.swift */; };
 		E1927197254D91F100070EA7 /* CapsLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1927196254D91F100070EA7 /* CapsLockManager.swift */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		E1927172254D7F2D00070EA7 /* CapsLockNoDelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapsLockNoDelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1927175254D7F2D00070EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1927177254D7F2D00070EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1927179254D7F2E00070EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E192717E254D7F2E00070EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E192717F254D7F2E00070EA7 /* CapsLockNoDelay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapsLockNoDelay.entitlements; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			children = (
 				E1927196254D91F100070EA7 /* CapsLockManager.swift */,
 				E1927175254D7F2D00070EA7 /* AppDelegate.swift */,
-				E1927177254D7F2D00070EA7 /* ViewController.swift */,
 				E1927179254D7F2E00070EA7 /* Assets.xcassets */,
 				E192717E254D7F2E00070EA7 /* Info.plist */,
 				E192717F254D7F2E00070EA7 /* CapsLockNoDelay.entitlements */,
@@ -134,7 +131,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1927178254D7F2D00070EA7 /* ViewController.swift in Sources */,
 				E1927176254D7F2D00070EA7 /* AppDelegate.swift in Sources */,
 				E1927191254D8B2400070EA7 /* main.swift in Sources */,
 				E1927197254D91F100070EA7 /* CapsLockManager.swift in Sources */,
@@ -268,6 +264,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X822FM39JE;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CapsLockNoDelay/Info.plist;
@@ -275,6 +272,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = gkpln3.CapsLockNoDelay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -290,6 +288,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X822FM39JE;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CapsLockNoDelay/Info.plist;
@@ -297,6 +296,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = gkpln3.CapsLockNoDelay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
