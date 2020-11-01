@@ -11,6 +11,7 @@ import Cocoa
 class CapsLockManager {
     var currentState = false
 
+    /// Requests accessability permissions to enable capturing of keyboard events.
     func requestAccess() -> Bool {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String : true]
         let accessEnabled = AXIsProcessTrustedWithOptions(options)
@@ -21,7 +22,8 @@ class CapsLockManager {
         }
         return true
     }
-
+    
+    /// Register an event listener and listen for caps-lock presses.
     func registerEventListener() {
         currentState = self.getCapsLockState()
         
@@ -36,14 +38,14 @@ class CapsLockManager {
                     print("Got state \(self.currentState)")
                 }
                 else {
-                    self.toggleCapsLock(!self.currentState)
+                    self.setCapsLockState(!self.currentState)
                     print("setting state \(!self.currentState)")
                 }
             }
         }
     }
 
-    func toggleCapsLock(_ state: Bool) {
+    func setCapsLockState(_ state: Bool) {
         var ioConnect: io_connect_t = .init(0)
         let ioService = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching(kIOHIDSystemClass))
         IOServiceOpen(ioService, mach_task_self_, UInt32(kIOHIDParamConnectType), &ioConnect)
