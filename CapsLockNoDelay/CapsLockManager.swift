@@ -31,15 +31,18 @@ class CapsLockManager {
             if (event.type != .systemDefined) {
                 return
             }
-
             if (event.subtype.rawValue == 211) {
-                if (event.data1 == 0) {
-                    self.currentState = self.getCapsLockState()
-                    print("Got state \(self.currentState)")
-                }
-                else {
-                    self.setCapsLockState(!self.currentState)
+                if event.data1 != 1 {
+                    // Delay is only when turning on, if this is a "disable capslock" press, ignore it.
                     print("setting state \(!self.currentState)")
+                    if (!self.currentState) {
+                        // Turn on the capslock.
+                        self.currentState = true
+                    }
+                    else {
+                        self.currentState = false
+                    }
+                    self.setCapsLockState(self.currentState)
                 }
             }
         }
