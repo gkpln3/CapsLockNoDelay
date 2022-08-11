@@ -26,6 +26,8 @@
 	<true/>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>LSUIElement</key>
+	<string>1</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

@@ -1,0 +1,5 @@
+*.dmg
+dmg/
+**/xcuserdata/
+build/
+
