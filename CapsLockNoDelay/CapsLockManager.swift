@@ -10,18 +10,6 @@ import Cocoa
 
 class CapsLockManager {
     var currentState = false
-
-    /// Requests accessability permissions to enable capturing of keyboard events.
-    func requestAccess() -> Bool {
-        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String : true]
-        let accessEnabled = AXIsProcessTrustedWithOptions(options)
-
-        if !accessEnabled {
-            print("Access Not Enabled")
-            return false
-        }
-        return true
-    }
     
     /// Register an event listener and listen for caps-lock presses.
     func registerEventListener() {
