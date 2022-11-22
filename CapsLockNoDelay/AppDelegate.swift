@@ -9,7 +9,7 @@ import Cocoa
 import ServiceManagement
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let capsLockManager = CapsLockManager()
+    var capsLockManager: Toggleable? = nil
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if (checkIfAppIsAlreadyRunning()) {
@@ -43,8 +43,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             askForAccessibilityPermission()
         }
         
+        if !checkIfCapsLockIsAssignedToLayoutSwitching() {
+            self.capsLockManager = CapsLockManager()
+        }
+        else {
+            // I did not observe delays when switching layouts.
+            // Enabling this when there are no delays may cause bugs.
+//            self.capsLockManager = InputSourceManager()
+        }
+        
         // Start listening for events.
-        self.capsLockManager.registerEventListener()
+        registerEventListener()
+    }
+    
+    /// Register an event listener and listen for caps-lock presses.
+    func registerEventListener() {
+        NSEvent.addGlobalMonitorForEvents(matching: [.keyUp, .systemDefined]) { (event) in
+            if (event.type != .systemDefined) {
+                return
+            }
+            if (event.subtype.rawValue == 211) {
+                if event.data1 != 1 {
+                    self.capsLockManager?.toggleState()
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -104,6 +127,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSApplication.shared.terminate(self)
         }
     }
-
+    
+    private func checkIfCapsLockIsAssignedToLayoutSwitching() -> Bool {
+        let command = "defaults read -g TISRomanSwitchState"
+        let task = Process()
+        task.launchPath = "/bin/bash"
+        task.arguments = ["-c", command]
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.launch()
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8)
+        return output?.trimmingCharacters(in: .whitespacesAndNewlines) == "1"
+    }
 }
 

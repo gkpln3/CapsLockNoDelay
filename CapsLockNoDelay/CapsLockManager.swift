@@ -6,37 +6,21 @@
 //
 
 import Foundation
-import Cocoa
 
-class CapsLockManager {
+class CapsLockManager: Toggleable {
     var currentState = false
     
-    /// Register an event listener and listen for caps-lock presses.
-    func registerEventListener() {
-        currentState = self.getCapsLockState()
-        
-        NSEvent.addGlobalMonitorForEvents(matching: [.keyUp, .systemDefined]) { (event) in
-            if (event.type != .systemDefined) {
-                return
-            }
-            if (event.subtype.rawValue == 211) {
-                if event.data1 != 1 {
-                    // Delay is only when turning on, if this is a "disable capslock" press, ignore it.
-                    print("setting state \(!self.currentState)")
-                    if (!self.currentState) {
-                        // Turn on the capslock.
-                        self.currentState = true
-                    }
-                    else {
-                        self.currentState = false
-                    }
-                    self.setCapsLockState(self.currentState)
-                }
-            }
-        }
+    init() {
+        currentState = Self.getCapsLockState()
     }
-
-    func setCapsLockState(_ state: Bool) {
+    
+    public func toggleState() {
+        print("setting state \(!self.currentState)")
+        self.setCapsLockState(!self.currentState)
+    }
+    
+    public func setCapsLockState(_ state: Bool) {
+        self.currentState = state
         var ioConnect: io_connect_t = .init(0)
         let ioService = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching(kIOHIDSystemClass))
         IOServiceOpen(ioService, mach_task_self_, UInt32(kIOHIDParamConnectType), &ioConnect)
@@ -44,7 +28,7 @@ class CapsLockManager {
         IOServiceClose(ioConnect)
     }
 
-    func getCapsLockState() -> Bool {
+    public static func getCapsLockState() -> Bool {
         var ioConnect: io_connect_t = .init(0)
         let ioService = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching(kIOHIDSystemClass))
         IOServiceOpen(ioService, mach_task_self_, UInt32(kIOHIDParamConnectType), &ioConnect)
