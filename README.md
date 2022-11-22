@@ -1,7 +1,7 @@
 # CapsLockNoDelay
 Removes annoying delay when pressing the caps lock on Mac OS.
 
-Confirmed working on MacOS Monterey 12.6
+Confirmed working on MacOS Ventura 13.0
 
 # Install
 Download from [releases](https://github.com/gkpln3/CapsLockNoDelay/releases) or compile from source.
