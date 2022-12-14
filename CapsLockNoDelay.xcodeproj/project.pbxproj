@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		E134F548292CF8B100F3B1BD /* Toggleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggleable.swift; sourceTree = "<group>"; };
+		E157028229492C8F00B2FF3A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		E164C65A292CF03B00962260 /* InputSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceManager.swift; sourceTree = "<group>"; };
 		E1927172254D7F2D00070EA7 /* CapsLockNoDelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapsLockNoDelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1927175254D7F2D00070EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,11 +39,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E157028129492C8F00B2FF3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E157028229492C8F00B2FF3A /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1927169254D7F2D00070EA7 = {
 			isa = PBXGroup;
 			children = (
 				E1927174254D7F2D00070EA7 /* CapsLockNoDelay */,
 				E1927173254D7F2D00070EA7 /* Products */,
+				E157028129492C8F00B2FF3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,20 +281,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockNoDelay/CapsLockNoDelay.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X822FM39JE;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CapsLockNoDelay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CapsLockNoDelay;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = gkpln3.CapsLockNoDelay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -297,20 +308,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockNoDelay/CapsLockNoDelay.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X822FM39JE;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CapsLockNoDelay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CapsLockNoDelay;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = gkpln3.CapsLockNoDelay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

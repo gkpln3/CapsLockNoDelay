@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import ServiceManagement
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var capsLockManager: Toggleable? = nil
@@ -75,9 +74,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func hasAccessibilityPermission() -> Bool {
-        let promptFlag = kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString
-        let myDict: CFDictionary = NSDictionary(dictionary: [promptFlag: false])
-        return AXIsProcessTrustedWithOptions(myDict)
+        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String : true]
+        return AXIsProcessTrustedWithOptions(options)
     }
 
     private func askForAccessibilityPermission() {
