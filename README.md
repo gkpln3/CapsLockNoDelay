@@ -4,9 +4,21 @@ Removes annoying delay when pressing the caps lock on Mac OS.
 Confirmed working on MacOS Ventura 13.0
 
 # Install
+
+### Manual
+
 Download from [releases](https://github.com/gkpln3/CapsLockNoDelay/releases) or compile from source.
 
 Copy CapsLockNoDelay.app to `/Applications` folder.
+
+### Homebrew
+
+To install it using Homebrew, open the Terminal app and type:
+```bash
+brew install --cask capslocknodelay
+```
+
+### Usage
 
 Go to `System Preferences` -> `General` -> `Login Items`, add `CapsLockNoDelay.app` to the list.
 
