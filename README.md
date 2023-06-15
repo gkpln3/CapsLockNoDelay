@@ -1,7 +1,7 @@
 # CapsLockNoDelay
 Removes annoying delay when pressing the caps lock on Mac OS.
 
-Confirmed working on MacOS Ventura 13.2.1
+Confirmed working on MacOS Ventura 13.4
 
 # Install
 
