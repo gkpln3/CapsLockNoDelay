@@ -4,7 +4,8 @@ Removes annoying delay when pressing the caps lock on Mac OS.
 Confirmed working on MacOS Ventura 13.4
 
 ## Built-in Alternative
-Turns out there is a built-in alternative for deactivating the CapsLockDelay:
+Turns out there is a built-in alternative for deactivating the CapsLockDelay.
+Thanks @decodism for pointing that out!
 ```bash
 hidutil property --set '{"CapsLockDelayOverride":0}'
 ```
